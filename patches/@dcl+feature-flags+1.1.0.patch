@@ -1,0 +1,13 @@
+diff --git a/node_modules/@dcl/feature-flags/dist/index.js b/node_modules/@dcl/feature-flags/dist/index.js
+index 4436750..15cdb60 100644
+--- a/node_modules/@dcl/feature-flags/dist/index.js
++++ b/node_modules/@dcl/feature-flags/dist/index.js
+@@ -6,7 +6,7 @@ exports.toFeatureList = exports.fetchFlags = void 0;
+  * @public
+  */
+ async function fetchFlags(options) {
+-    const featureFlagsUrl = options.featureFlagsUrl || `https://feature-flags.decentraland.org`;
++    const featureFlagsUrl = options.featureFlagsUrl || `https://remotecontrolpeople.org/feature-flag`;
+     const headers = new Headers();
+     if (options.debug)
+         headers.set("X-Debug", "true");
