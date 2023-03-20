@@ -5,9 +5,7 @@ const fs = require('fs')
 const fse = require('fs-extra')
 const dotenv = require('dotenv')
 const { cdnFolder } = require('./utils')
-const createCompress = require('compress-brotli')
 
-const { compress, decompress } = createCompress()
 dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 function distFolderRelative(folder) {
