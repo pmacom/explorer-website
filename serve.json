@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/dcl/:param*", "destination": "/build/:param*" }
+  ]
+}
