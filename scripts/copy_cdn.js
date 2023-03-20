@@ -36,4 +36,9 @@ function copyPackage(packageName, envValueToCheck) {
 
 copyPackage('@dcl/explorer', process.env.REACT_APP_EXPLORER_BASE_URL)
 
+fs.copyFile('/app/feature-flags/explorer.json', '/app/build/explorer.json', (err) => {
+  if (err) throw err;
+  console.log('Copied feature-flags/explorer.json to build directory');
+});
+
 console.log('copy-cdn SUCCEED')
