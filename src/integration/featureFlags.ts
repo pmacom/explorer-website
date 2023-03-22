@@ -6,8 +6,8 @@ import { callOnce } from "../utils/callOnce"
 
 export const initializeFeatureFlags = callOnce(async () => {
   const ff = await fetchFlags({
-    featureFlagsUrl: 'https://remotecontrolpeople.org/feature-flags',
+    featureFlagsUrl: 'https://remotecontrolpeople.org',
     applicationName: FF_APPLICATION_NAME
   })
-  store.dispatch(setFeatureFlags(ff))
+  // store.dispatch(setFeatureFlags(ff))
 })
