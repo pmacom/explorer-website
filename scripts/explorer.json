@@ -37,10 +37,10 @@
       "enabled": true
     },
     "explorer-rollout-explorer-version": {
-      "name": "1.0.73952-20230125122546.commit-2029f5d",
+      "name": "1.0.93488-20230321191525.commit-5653b8b",
       "payload": {
         "type": "json",
-        "value": "{\"resolved\": \"https://cdn.decentraland.org/@dcl/explorer/1.0.73952-20230125122546.commit-2029f5d\", \"version\": \"1.0.73952-20230125122546.commit-2029f5d\" }"
+        "value": "{\"resolved\": \"https://remotecontrolpeople.org/cdn/packages/explorer/1.0.93488-20230321191525.commit-5653b8b\", \"version\": \"1.0.93488-20230321191525.commit-5653b8b\" }"
       },
       "enabled": true
     },
