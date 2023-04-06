@@ -166,10 +166,12 @@ async function getVersions(flags: FeatureFlagsResult) {
   }
 
   // 2. load from URN/URL PARAM
-  const rendererUrl = qs.get('renderer')
-  if (rendererUrl) {
-    globalThis.EXPLORER_BASE_URL = ensureOrigin(rendererUrl)
-  }
+  globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity'
+  // const rendererUrl = qs.get('renderer')
+  // if (rendererUrl) {
+  //   globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity' //TODO: Point this to a static directory of the build output
+  //   //ensureOrigin(rendererUrl)
+  // }
 
   // 3. load hot-branch
   const explorerBranch = qs.get('explorer-branch')
