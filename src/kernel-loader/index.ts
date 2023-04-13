@@ -166,7 +166,7 @@ async function getVersions(flags: FeatureFlagsResult) {
   }
 
   // 2. load from URN/URL PARAM
-  globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity'
+  globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/static'
   // const rendererUrl = qs.get('renderer')
   // if (rendererUrl) {
   //   globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity' //TODO: Point this to a static directory of the build output
