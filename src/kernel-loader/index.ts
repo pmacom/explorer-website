@@ -166,7 +166,7 @@ async function getVersions(flags: FeatureFlagsResult) {
   }
 
   // 2. load from URN/URL PARAM
-  globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/static'
+  globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity'
   // const rendererUrl = qs.get('renderer')
   // if (rendererUrl) {
   //   globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity' //TODO: Point this to a static directory of the build output
@@ -201,6 +201,8 @@ async function getVersions(flags: FeatureFlagsResult) {
       globalThis.EXPLORER_BASE_URL = `https://cdn.decentraland.org/@dcl/explorer/${version}`
     }
   }
+
+  globalThis.EXPLORER_BASE_URL = 'https://remotecontrolpeople.org/unity'
 }
 
 async function initKernel() {
