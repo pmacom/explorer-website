@@ -6,9 +6,9 @@ export async function injectKernel(options: KernelOptions): Promise<KernelResult
   const kernelUrl = new URL(`game.js`, options.kernelOptions.baseUrl).toString()
   // const kernelUrl = new URL(`index.js`, options.kernelOptions.baseUrl).toString()
 
-  await injectScript(kernelUrl)
-
   console.log('Kernel: ', kernelUrl)
+
+  await injectScript(kernelUrl)
 
   const DecentralandKernel: IDecentralandKernel = (globalThis as any).DecentralandKernel
 

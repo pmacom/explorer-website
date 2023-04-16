@@ -166,45 +166,47 @@ function cdnFromPrefixVersion(prefix: string, version: string): string {
 async function getVersions(flags: FeatureFlagsResult) {
   const qs = new URLSearchParams(document.location.search)
 
-  // 1. load from ROLLOUTS + CDN
-  if (globalThis.ROLLOUTS && globalThis.ROLLOUTS['@dcl/explorer']) {
-    globalThis.EXPLORER_BASE_URL = cdnFromRollout(globalThis.ROLLOUTS['@dcl/explorer'])
-  }
+  globalThis.EXPLORER_BASE_URL = process.env.REACT_APP_EXPLORER_BASE_URL
+  
+  // // 1. load from ROLLOUTS + CDN
+  // if (globalThis.ROLLOUTS && globalThis.ROLLOUTS['@dcl/explorer']) {
+  //   globalThis.EXPLORER_BASE_URL = cdnFromRollout(globalThis.ROLLOUTS['@dcl/explorer'])
+  // }
 
-  // 2. load from URN/URL PARAM
-  const rendererUrl = qs.get('renderer')
-  if (rendererUrl) {
-    globalThis.EXPLORER_BASE_URL = ensureOrigin(rendererUrl)
-  }
+  // // 2. load from URN/URL PARAM
+  // const rendererUrl = qs.get('renderer')
+  // if (rendererUrl) {
+  //   globalThis.EXPLORER_BASE_URL = ensureOrigin(rendererUrl)
+  // }
 
-  // 3. load hot-branch
-  const explorerBranch = qs.get('explorer-branch')
-  if (explorerBranch) {
-    globalThis.EXPLORER_BASE_URL = withOrigin(explorerBranch, 'https://renderer-artifacts.decentraland.org/branch/')
-  }
+  // // 3. load hot-branch
+  // const explorerBranch = qs.get('explorer-branch')
+  // if (explorerBranch) {
+  //   globalThis.EXPLORER_BASE_URL = withOrigin(explorerBranch, 'https://renderer-artifacts.decentraland.org/branch/')
+  // }
 
-  // 4. specific cdn versions
-  const explorerVersion = qs.get('explorer-version')
-  if (explorerVersion) {
-    globalThis.EXPLORER_BASE_URL = cdnFromPrefixVersion('@dcl/explorer', explorerVersion)
-  }
+  // // 4. specific cdn versions
+  // const explorerVersion = qs.get('explorer-version')
+  // if (explorerVersion) {
+  //   globalThis.EXPLORER_BASE_URL = cdnFromPrefixVersion('@dcl/explorer', explorerVersion)
+  // }
 
-  // 5. @deprecated if we're in native, load kernel version (to mantain compatibility)
-  if (RENDERER_TYPE === 'native') {
-    const kernelVersion = qs.get('kernel-version')
-    if (kernelVersion) {
-      globalThis.EXPLORER_BASE_URL = cdnFromPrefixVersion('@dcl/kernel', kernelVersion)
-    }
-  }
+  // // 5. @deprecated if we're in native, load kernel version (to mantain compatibility)
+  // if (RENDERER_TYPE === 'native') {
+  //   const kernelVersion = qs.get('kernel-version')
+  //   if (kernelVersion) {
+  //     globalThis.EXPLORER_BASE_URL = cdnFromPrefixVersion('@dcl/kernel', kernelVersion)
+  //   }
+  // }
 
-  // default fallback
+  // // default fallback
 
-  if (!globalThis.EXPLORER_BASE_URL) {
-    if (flags.variants['explorer-rollout-explorer-version']) {
-      const version = flags.variants['explorer-rollout-explorer-version'].name
-      globalThis.EXPLORER_BASE_URL = `https://cdn.decentraland.org/@dcl/explorer/${version}`
-    }
-  }
+  // if (!globalThis.EXPLORER_BASE_URL) {
+  //   if (flags.variants['explorer-rollout-explorer-version']) {
+  //     const version = flags.variants['explorer-rollout-explorer-version'].name
+  //     globalThis.EXPLORER_BASE_URL = `https://cdn.decentraland.org/@dcl/explorer/${version}`
+  //   }
+  // }
 }
 
 async function initKernel() {
