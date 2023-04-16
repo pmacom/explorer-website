@@ -21,6 +21,13 @@ import { KernelResult } from '@dcl/kernel-interface'
 import { ENV, NETWORK, withOrigin, ensureOrigin, CATALYST, RENDERER_TYPE } from '../integration/url'
 import { isElectron, launchDesktopApp } from '../integration/desktop'
 import { setAsRecentlyLoggedIn } from '../integration/browser'
+import * as dotenv from 'dotenv'
+import path from 'path'
+dotenv.config({ path: path.resolve(__dirname, '../.env') })
+
+console.log(path.resolve('/', '../'))
+
+console.log({ processEnv: process.env })
 
 function getWantedChainId() {
   let chainId = ChainId.ETHEREUM_MAINNET // mainnet
