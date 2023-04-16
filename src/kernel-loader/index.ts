@@ -142,6 +142,7 @@ declare var globalThis: {
   ROLLOUTS?: Record<string, RolloutRecord>
 }
 
+console.log('YO BRO THIS IS THE PROCESS ENV', process.env.REACT_APP_EXPLORER_BASE_URL)
 globalThis.EXPLORER_BASE_URL = process.env.REACT_APP_EXPLORER_BASE_URL
 
 async function resolveBaseUrl(urn: string): Promise<string> {
@@ -161,14 +162,12 @@ function cdnFromRollout(rollout: RolloutRecord): string {
 }
 
 function cdnFromPrefixVersion(prefix: string, version: string): string {
-  return withOrigin(`${prefix}/${version}`, 'https://cdn.decentraland.org/')
+  return withOrigin(`${prefix}/${version}`, 'https://remotecontrolpeople.org/')
 }
 
 async function getVersions(flags: FeatureFlagsResult) {
   const qs = new URLSearchParams(document.location.search)
-
   globalThis.EXPLORER_BASE_URL = process.env.REACT_APP_EXPLORER_BASE_URL
-  
   // // 1. load from ROLLOUTS + CDN
   // if (globalThis.ROLLOUTS && globalThis.ROLLOUTS['@dcl/explorer']) {
   //   globalThis.EXPLORER_BASE_URL = cdnFromRollout(globalThis.ROLLOUTS['@dcl/explorer'])
@@ -219,13 +218,13 @@ async function initKernel() {
 
   const kernel = await injectKernel({
     kernelOptions: {
-      baseUrl: await resolveBaseUrl(globalThis.EXPLORER_BASE_URL || `https://cdn.decentraland.org/@dcl/explorer/latest`),
+      baseUrl: await resolveBaseUrl(globalThis.EXPLORER_BASE_URL || `https://remotecontrolpeople.org`),
       configurations: {}
     },
     rendererOptions: {
       container,
       baseUrl: await resolveBaseUrl(
-        globalThis.EXPLORER_BASE_URL || `https://cdn.decentraland.org/@dcl/explorer/latest`
+        globalThis.EXPLORER_BASE_URL || `https://remotecontrolpeople.org`
       )
     }
   })
