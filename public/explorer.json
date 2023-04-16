@@ -18,18 +18,7 @@
     "explorer-use_material_transition_controller": true,
     "explorer-use-social-server-friendships": true,
     "explorer-wearable_asset_bundles": true,
-    "explorer-voice_chat": true,
-
-    "explorer-avatar_outliner": true,
-    "explorer-backpack_editor_v1": true,
-    "explorer-chat_mentions_enabled": true,
-    "explorer-friend_request_anti_spam_config": true,
-    "explorer-friends_by_online_status": true,
-    "explorer-friends_enabled": true,
-    "explorer-new_avatar_flow": true,
-    "explorer-new_friend_requests": true,
-    "explorer-third_party_collections": true,
-    "explorer-with-collections": true
+    "explorer-voice_chat": true
   },
   "variants": {
     "explorer-max_visible_peers": {
