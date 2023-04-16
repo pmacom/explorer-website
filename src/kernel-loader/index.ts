@@ -152,6 +152,7 @@ async function resolveBaseUrl(urn: string): Promise<string> {
     }
     throw new Error('Cannot resolve content for URN ' + urn)
   }
+  console.log('Trying to resolve this bsase url yo, this is the urn', urn)
   return (new URL(`${urn}`, global.location.toString()).toString() + '/').replace(/(\/)+$/, '/')
 }
 
