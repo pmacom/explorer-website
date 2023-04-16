@@ -3,8 +3,8 @@ import { KernelOptions, KernelResult, IDecentralandKernel } from '@dcl/kernel-in
 
 export async function injectKernel(options: KernelOptions): Promise<KernelResult> {
   // TODO: This is a hack to make the kernel work in the explorer (patmacs)
-  const kernelUrl = new URL(`game.js`, options.kernelOptions.baseUrl).toString()
-  // const kernelUrl = new URL(`index.js`, options.kernelOptions.baseUrl).toString()
+  // const kernelUrl = new URL(`game.js`, options.kernelOptions.baseUrl).toString()
+  const kernelUrl = new URL(`index.js`, options.kernelOptions.baseUrl).toString()
 
   console.log('Kernel: ', kernelUrl)
 
